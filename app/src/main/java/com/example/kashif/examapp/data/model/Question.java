@@ -1,10 +1,12 @@
 package com.example.kashif.examapp.data.model;
 
+import java.io.Serializable;
+
 /**
  * Created by mininduwiorchana on 3/30/18.
  */
 
-public class Question {
+public class Question implements Serializable{
 
     private String id;
     private String questionText;
@@ -17,6 +19,8 @@ public class Question {
 
 
     public Question() {
+        // TODO: 3/30/18 remove the line below
+        this.usersAnswer = 2;
     }
 
     public Question(String id, String questionText, String answerOptionOne, String answerOptionTwo,

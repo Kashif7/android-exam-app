@@ -1,5 +1,6 @@
 package com.example.kashif.examapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,6 +83,10 @@ public class ExamActivity extends AppCompatActivity {
 //                Question currentQuestion = questions.get(0);
 //                currentQuestion.setUsersAnswer(1);
                 tvQuestionText.setText("Text New");
+
+                Intent intent = new Intent(ExamActivity.this,ExamResultActivity.class);
+                intent.putExtra("ANSWERS_QUESTIONS",questions);
+                startActivity(intent);
             }
         });
     }
