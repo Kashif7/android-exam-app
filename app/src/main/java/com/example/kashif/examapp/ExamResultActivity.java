@@ -17,10 +17,10 @@ public class ExamResultActivity extends AppCompatActivity {
 
         answeredQuestions = (ArrayList<Question>) getIntent().getSerializableExtra("ANSWERS_QUESTIONS");
 
-        Intent intent = new Intent(this,ExamResultDetailActivity.class);
-        intent.putExtra("ANSWERS_QUESTIONS",answeredQuestions);
-        intent.putExtra("RESULT_TEXT","Congrates 100%");
-        startActivity(intent);
+//        Intent intent = new Intent(this,ExamResultDetailActivity.class);
+//        intent.putExtra("ANSWERS_QUESTIONS",answeredQuestions);
+//        intent.putExtra("RESULT_TEXT","Congrates 100%");
+//        startActivity(intent);
 
     }
 }
