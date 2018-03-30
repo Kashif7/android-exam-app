@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (userName.getText().toString().equals("student1") &&
                         password.getText().toString().equals("123")) {
                     startActivity(new Intent(getApplicationContext(),
-                            MainActivity.class));
+                            ExamActivity.class));
 
                 } else if (userName.getText().toString().equals("teacher1") &&
                         password.getText().toString().equals("123")) {
