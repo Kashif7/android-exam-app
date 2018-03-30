@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kashif.examapp.ExamResultActivity">
+    tools:context="com.example.kashif.examapp.ExamResultActivity"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="mmbffifj"
+        android:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:background="@drawable/circle"
+        android:visibility="visible"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="40dp"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_viewDetails"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp"
+        android:text="Login"/>
+
+
+</RelativeLayout>
