@@ -18,22 +18,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         >
         <RadioButton android:id="@+id/rbAnswerOne"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"
+            />
+
         <RadioButton android:id="@+id/rbAnswerTwo"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"/>
             <!--android:onClick="onRadioButtonClicked"/>-->
         <RadioButton
             android:id="@+id/rbAnswerThree"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"/>
         <RadioButton
             android:id="@+id/rbAnswerFour"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"/>
     </RadioGroup>
 
 </LinearLayout>
