@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -26,12 +28,18 @@ public class ExamActivity extends AppCompatActivity {
     ArrayList<Question> questions;
     private TextView tvQuestionText;
     private TextView questionCount;
+
     private Button btnAction;
+
     private RadioGroup radioGroup;
     private RadioButton answer1;
     private RadioButton answer2;
     private RadioButton answer3;
     private RadioButton answer4;
+
+    private LinearLayout correctAnswer;
+    private  LinearLayout wrongAnswer;
+
     private boolean isAnswered;
     private boolean isSubmitted;
     private boolean isAnsweredAll;
@@ -88,6 +96,9 @@ public class ExamActivity extends AppCompatActivity {
         answer2 = findViewById(R.id.rbAnswerTwo);
         answer3 = findViewById(R.id.rbAnswerThree);
         answer4 = findViewById(R.id.rbAnswerFour);
+
+        correctAnswer = findViewById(R.id.correctAnswerMessage);
+        wrongAnswer = findViewById(R.id.wrongAnswerMessage);
 
         btnAction = findViewById(R.id.btnAction);
         btnAction.setEnabled(false);
@@ -176,6 +187,8 @@ public class ExamActivity extends AppCompatActivity {
                     intent.putExtra("ANSWERS_QUESTIONS",questions);
                     startActivity(intent);
                 } else if (isSubmitted) {
+                    correctAnswer.setVisibility(View.GONE);
+                    wrongAnswer.setVisibility(View.GONE);
                     index++;
                     int count = index+1;
                     questionCount.setText(""+count+"/"+questions.size());
@@ -195,6 +208,11 @@ public class ExamActivity extends AppCompatActivity {
                     btnAction.setText("Go to Next");
 
                     if (currentQuestion.getUsersAnswer() == currentQuestion.getCorrectAnswer()) {
+                        correctAnswer.setVisibility(View.VISIBLE);
+                        wrongAnswer.setVisibility(View.GONE);
+                    } else {
+                        correctAnswer.setVisibility(View.GONE);
+                        wrongAnswer.setVisibility(View.VISIBLE);
                     }
 
                     isSubmitted = true;

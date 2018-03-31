@@ -83,6 +83,20 @@ public class Question implements Serializable{
         this.answerOptionFour = answerOptionFour;
     }
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id='" + id + '\'' +
+                ", questionText='" + questionText + '\'' +
+                ", answerOptionOne='" + answerOptionOne + '\'' +
+                ", answerOptionTwo='" + answerOptionTwo + '\'' +
+                ", answerOptionThree='" + answerOptionThree + '\'' +
+                ", answerOptionFour='" + answerOptionFour + '\'' +
+                ", correctAnswer=" + correctAnswer +
+                ", usersAnswer=" + usersAnswer +
+                '}';
+    }
+
     public int getCorrectAnswer() {
         return correctAnswer;
     }
