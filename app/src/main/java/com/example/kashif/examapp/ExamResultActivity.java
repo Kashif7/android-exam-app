@@ -1,5 +1,6 @@
 package com.example.kashif.examapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,20 +33,24 @@ public class ExamResultActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        for (Question question: answeredQuestions) {
+        for (Question question : answeredQuestions) {
             if (question.getCorrectAnswer() == question.getUsersAnswer()) {
                 correctCount += correctCount;
             }
         }
 
         marks = correctCount * markPerQuestion;
-        Log.d("sfuwhwf", ""+marks);
+        Log.d("sfuwhwf", "" + marks);
 
-        viewDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        viewDetails.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //        Intent intent = new Intent(this,ExamResultDetailActivity.class);
+////        intent.putExtra("ANSWERS_QUESTIONS",answeredQuestions);
+////        intent.putExtra("RESULT_TEXT","Congrates 100%");
+////        startActivity(intent);
+//            }
+//        });
 
-            }
-        });
     }
 }

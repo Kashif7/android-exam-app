@@ -3,14 +3,13 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:background="#80cbc4">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvQuestionPos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1/10" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <include layout="@layout/layout_question_layout"/>
 

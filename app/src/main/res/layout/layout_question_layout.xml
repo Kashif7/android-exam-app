@@ -2,30 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="56dp">
+
     <TextView
         android:id="@+id/tvQuestionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is the question" />
-    <RadioButton
-        android:id="@+id/rbAnswerOne"
-        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/RG1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Answer 1" />
-    <RadioButton
-        android:id="@+id/rbAnswerTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton" />
-    <RadioButton
-        android:id="@+id/rbAnswerThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton" />
-    <RadioButton
-        android:id="@+id/rbAnswerFour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton" />
+        android:orientation="vertical"
+        >
+        <RadioButton android:id="@+id/rbAnswerOne"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/rbAnswerTwo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+            <!--android:onClick="onRadioButtonClicked"/>-->
+        <RadioButton
+            android:id="@+id/rbAnswerThree"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbAnswerFour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
 </LinearLayout>
