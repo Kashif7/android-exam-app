@@ -41,18 +41,11 @@ public class TeacherActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
         gson = new Gson();
 
-        jsonString = questionString.getText().toString();
-        jsonString = "{questionText:Iamawesome," +
-                "answerOptionOne:feffkefe," +
-                "answerOptionTwo:ddmdmd," +
-                "answerOptionThree:ejeifejfeif," +
-                "answerOptionFour:ffijefjiewf," +
-                "correctAnswer:" + 1 + "}";
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                jsonString = questionString.getText().toString();
                 ref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
