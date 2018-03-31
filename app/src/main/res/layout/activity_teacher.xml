@@ -9,14 +9,23 @@
     <EditText
         android:id="@+id/question"
         android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:height="100dp"
+        android:width="380dp"
         android:layout_height="wrap_content"
         android:hint="Enter JSON"
         />
 
     <Button
         android:id="@+id/add"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:text="Add Question"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginVertical="45dp"
+        android:background="#036e64"
+        android:paddingLeft="30dp"
+        android:text="Add QUESTION"
+        android:textAlignment="textStart" />
+
 
 </LinearLayout>

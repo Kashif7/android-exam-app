@@ -16,23 +16,25 @@
         android:textSize="30sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:background="@drawable/circle"
+        android:paddingTop="10dp"
         android:visibility="visible"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="190dp"
+        android:layout_marginLeft="60dp"
         />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_viewDetails"
+        android:background="#036e64"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginBottom="80dp"
         android:layout_alignParentBottom="true"
         android:padding="12dp"
-        android:text="Login"/>
+        android:text="FINISH"/>
 
 
 </RelativeLayout>
