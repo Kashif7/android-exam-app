@@ -18,29 +18,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-
+        android:visibility="gone"
         >
-        <RadioButton android:id="@+id/rbAnswerOne"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            />
 
-        <RadioButton android:id="@+id/rbAnswerTwo"
+        <RadioButton
+            android:id="@+id/rbAnswerOne"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="20dp"/>
-            <!--android:onClick="onRadioButtonClicked"/>-->
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rbAnswerTwo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/rbAnswerThree"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="20dp"/>
+            android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/rbAnswerFour"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"/>
+            android:paddingBottom="20dp" />
     </RadioGroup>
 
 </LinearLayout>

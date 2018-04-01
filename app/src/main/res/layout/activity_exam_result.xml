@@ -8,7 +8,7 @@
     >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/marks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -25,7 +25,7 @@
         />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_viewDetails"
+        android:id="@+id/finish"
         android:background="#036e64"
         android:layout_width="100dp"
         android:layout_height="wrap_content"

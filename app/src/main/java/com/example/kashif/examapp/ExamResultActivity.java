@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.kashif.examapp.data.model.Question;
 
@@ -17,7 +18,11 @@ public class ExamResultActivity extends AppCompatActivity {
     private int correctCount;
     private int markPerQuestion;
     private int marks;
-    private Button viewDetails;
+    private int totalMarks;
+    private String marksString;
+
+    private Button finish;
+    private TextView finalMarks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,30 +32,38 @@ public class ExamResultActivity extends AppCompatActivity {
         markPerQuestion = 1;
         correctCount = 0;
 
-        answeredQuestions = (ArrayList<Question>) getIntent().getSerializableExtra("ANSWERS_QUESTIONS");
+        answeredQuestions = (ArrayList<Question>) getIntent().getSerializableExtra("ANSWERED_QUESTIONS");
 
         initialize();
     }
 
     private void initialize() {
+        finalMarks = findViewById(R.id.marks);
+        finish = findViewById(R.id.finish);
+
         for (Question question : answeredQuestions) {
             if (question.getCorrectAnswer() == question.getUsersAnswer()) {
-                correctCount += correctCount;
+                Log.d("correct answer", ""+question.getUsersAnswer());
+                correctCount++;
             }
         }
 
         marks = correctCount * markPerQuestion;
+        totalMarks = answeredQuestions.size() * markPerQuestion;
         Log.d("sfuwhwf", "" + marks);
 
-//        viewDetails.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //        Intent intent = new Intent(this,ExamResultDetailActivity.class);
-////        intent.putExtra("ANSWERS_QUESTIONS",answeredQuestions);
-////        intent.putExtra("RESULT_TEXT","Congrates 100%");
-////        startActivity(intent);
-//            }
-//        });
+        marksString = "You have "+marks+" out of "+totalMarks;
+
+        finalMarks.setText(marksString);
+
+
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),
+                        LoginActivity.class));
+            }
+        });
 
     }
 }

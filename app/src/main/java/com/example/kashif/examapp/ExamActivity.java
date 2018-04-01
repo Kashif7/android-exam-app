@@ -92,6 +92,7 @@ public class ExamActivity extends AppCompatActivity {
         tvQuestionText = findViewById(R.id.tvQuestionText);
         questionCount = findViewById(R.id.tvQuestionPos);
         radioGroup = findViewById(R.id.RG1);
+
         answer1 = findViewById(R.id.rbAnswerOne);
         answer2 = findViewById(R.id.rbAnswerTwo);
         answer3 = findViewById(R.id.rbAnswerThree);
@@ -100,8 +101,12 @@ public class ExamActivity extends AppCompatActivity {
         correctAnswer = findViewById(R.id.correctAnswerMessage);
         wrongAnswer = findViewById(R.id.wrongAnswerMessage);
 
+        radioGroup.setVisibility(View.VISIBLE);
+
         btnAction = findViewById(R.id.btnAction);
+        btnAction.setText("Submit");
         btnAction.setEnabled(false);
+        btnAction.setVisibility(View.VISIBLE);
 
         Log.d("DB#@*$&(#&$(","inside intialize");
         currentQuestion = questions.get(index);
@@ -184,7 +189,7 @@ public class ExamActivity extends AppCompatActivity {
                 if (isAnsweredAll) {
                     Toast.makeText(getApplicationContext(), "jfiejeifje", Toast.LENGTH_SHORT);
                     Intent intent = new Intent(ExamActivity.this,ExamResultActivity.class);
-                    intent.putExtra("ANSWERS_QUESTIONS",questions);
+                    intent.putExtra("ANSWERED_QUESTIONS",questions);
                     startActivity(intent);
                 } else if (isSubmitted) {
                     correctAnswer.setVisibility(View.GONE);
@@ -204,8 +209,16 @@ public class ExamActivity extends AppCompatActivity {
                     answer2.setText(currentQuestion.getAnswerOptionTwo());
                     answer3.setText(currentQuestion.getAnswerOptionThree());
                     answer4.setText(currentQuestion.getAnswerOptionFour());
+
+                    for (int i = 0; i < radioGroup.getChildCount(); i++) {
+                        radioGroup.getChildAt(i).setEnabled(true);
+                    }
                 }else if (isAnswered) {
                     btnAction.setText("Go to Next");
+
+                    for (int i = 0; i < radioGroup.getChildCount(); i++) {
+                        radioGroup.getChildAt(i).setEnabled(false);
+                    }
 
                     if (currentQuestion.getUsersAnswer() == currentQuestion.getCorrectAnswer()) {
                         correctAnswer.setVisibility(View.VISIBLE);

@@ -1,5 +1,7 @@
 package com.example.kashif.examapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,8 +56,10 @@ public class TeacherActivity extends AppCompatActivity {
                             noOfQuestions = dataSnapshot.getChildrenCount();
                             Log.d("dvkdokd", "no of questions" + noOfQuestions);
                             Question question = gson.fromJson(jsonString, Question.class);
-                            newIndex = noOfQuestions+1;
+                            newIndex = noOfQuestions + 1;
                             ref.child("q" + newIndex).setValue(question);
+                            createAlert();
+                            questionString.setText("");
                             Log.d("DB#@*$&(#&$(", "went inside");
                         } else {
                             Log.d("DB#@*$&(#&$(", "NOT GOING INSIDE");
@@ -69,5 +73,23 @@ public class TeacherActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void createAlert() {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(TeacherActivity.this);
+        builder1.setMessage("Your question was successfully added");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
     }
 }
